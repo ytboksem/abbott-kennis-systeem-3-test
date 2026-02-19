@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{ article[1] }}</h2>
+
+<p><strong>Auteur:</strong> {{ article[2] }}</p>
+<p><strong>Afdeling:</strong> {{ article[3] }}</p>
+<p><strong>Categorie:</strong> {{ article[4] }}</p>
+<p><strong>Versie:</strong> {{ article[5] }}</p>
+<p><strong>Datum:</strong> {{ article[9] }}</p>
+<p><strong>Views:</strong> {{ article[10] }}</p>
+
+<hr>
+
+<p>{{ article[6] }}</p>
+
+{% if article[7] %}
+<a href="{{ article[7] }}" target="_blank">Video bekijken</a>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<p>Totaal artikelen: <strong>{{ total_articles }}</strong></p>
+
+<h4>Laatst toegevoegd</h4>
+<ul>
+    {% for article in latest %}
+        <li>{{ article[1] }}</li>
+    {% endfor %}
+</ul>
+
+<h4>Meest bekeken</h4>
+<ul>
+    {% for article in most_viewed %}
+        <li>{{ article[1] }} ({{ article[10] }} views)</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+

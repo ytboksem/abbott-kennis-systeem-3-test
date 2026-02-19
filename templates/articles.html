@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Artikelen Overzicht</h2>
+
+<form method="GET" class="row mb-3">
+    <div class="col">
+        <input type="text" name="search" class="form-control" placeholder="Zoeken...">
+    </div>
+    <div class="col">
+        <select name="category" class="form-control">
+            <option value="">Alle categorieën</option>
+            <option>Procedure</option>
+            <option>Handleiding</option>
+            <option>Beleid</option>
+            <option>Veiligheid</option>
+        </select>
+    </div>
+    <div class="col">
+        <select name="department" class="form-control">
+            <option value="">Alle afdelingen</option>
+            <option>HR</option>
+            <option>IT</option>
+            <option>Finance</option>
+            <option>Laboratorium</option>
+            <option>Productie</option>
+        </select>
+    </div>
+    <div class="col">
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </div>
+</form>
+
+{% for article in articles %}
+<div class="card mb-3">
+    <div class="card-body">
+        <h5>{{ article[1] }}</h5>
+        <p>{{ article[6][:200] }}...</p>
+        <a href="/article/{{ article[0] }}" class="btn btn-info btn-sm">Bekijk</a>
+        <a href="/edit/{{ article[0] }}" class="btn btn-warning btn-sm">Bewerk</a>
+        <a href="/delete/{{ article[0] }}" class="btn btn-danger btn-sm">Verwijder</a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

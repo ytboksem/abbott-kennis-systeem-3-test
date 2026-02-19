@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artikel Toevoegen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+
+<h2>Nieuw Kennis Artikel</h2>
+
+<form method="POST">
+
+    <input type="text" name="title" class="form-control mb-2" placeholder="Titel" required>
+
+    <input type="text" name="author" class="form-control mb-2" placeholder="Auteur naam" required>
+
+    <select name="department" class="form-control mb-2" required>
+        <option value="">Selecteer afdeling</option>
+        <option>HR</option>
+        <option>IT</option>
+        <option>Finance</option>
+        <option>Laboratorium</option>
+        <option>Productie</option>
+    </select>
+
+    <select name="category" class="form-control mb-2" required>
+        <option value="">Selecteer categorie</option>
+        <option>Procedure</option>
+        <option>Handleiding</option>
+        <option>Beleid</option>
+        <option>Veiligheid</option>
+    </select>
+
+    <input type="text" name="version" class="form-control mb-2" placeholder="Versienummer (bijv. 1.0)" required>
+
+    <input type="text" name="video_link" class="form-control mb-2" placeholder="Video link (optioneel)">
+
+    <textarea name="content" class="form-control mb-3" rows="6" placeholder="Volledige kennisinhoud..." required></textarea>
+
+    <button type="submit" class="btn btn-success">Opslaan</button>
+
+</form>
+
+<br>
+<a href="/dashboard" class="btn btn-secondary">Terug naar Dashboard</a>
+
+</body>
+</html>
